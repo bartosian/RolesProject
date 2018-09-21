@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Role} from '../../models/role';
 import {NgForm} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-roles',
@@ -11,7 +12,7 @@ export class RolesComponent implements OnInit {
 
   rolesArr;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -25,5 +26,6 @@ export class RolesComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const roles = form.value.roles;
+    this.router.navigate(['main', 'sum']);
   }
 }

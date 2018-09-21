@@ -1,5 +1,11 @@
 .has-error {
-  outline: red;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.has-error > span {
+  color: red;
 }
 
 #main-form {
