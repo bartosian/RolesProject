@@ -28,4 +28,8 @@ export class RolesComponent implements OnInit {
     const roles = form.value.roles;
     this.router.navigate(['main', 'sum']);
   }
+
+  prevPage() {
+    this.router.navigate(['main']);
+  }
 }
