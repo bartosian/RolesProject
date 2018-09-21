@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
+import {Role} from '../models/role';
 
 @Component({
   selector: 'app-adding-user',
@@ -9,6 +10,7 @@ import { User } from '../models/user';
 export class AddingUserComponent implements OnInit {
 
   users: Array<User>;
+  roles: Array<Role>;
 
   constructor() { }
 

@@ -11,8 +11,6 @@ import {User} from '../../models/user';
 export class PersonalInfoComponent implements OnInit {
 
   form: FormGroup;
-  requestSent = false;
-  addNewUser: EventEmitter<User>;
 
   constructor(private fb: FormBuilder) {}
 
@@ -22,17 +20,11 @@ export class PersonalInfoComponent implements OnInit {
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]]
     });
-
-    this.addNewUser = new EventEmitter<User>();
   }
-  onSubmit(e) {
-    e.preventDefault();
-    this.requestSent = true;
+
+  onSubmit() {
     const { email, firstName, lastName } = this.form.value;
     const formData = { email, firstName, lastName };
-
-    this.addNewUser.emit(formData);
-    this.requestSent = false;
   }
 
 }
