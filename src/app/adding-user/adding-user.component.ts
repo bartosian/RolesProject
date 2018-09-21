@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
-import {Role} from '../models/role';
 
 @Component({
   selector: 'app-adding-user',
@@ -9,16 +7,7 @@ import {Role} from '../models/role';
 })
 export class AddingUserComponent implements OnInit {
 
-  users: Array<User>;
-  roles: Array<Role>;
-
   constructor() { }
 
   ngOnInit() {}
-
-  addNewUser(user: User) {
-    const users = this.users.slice();
-    this.users = [...users, user];
-  }
-
 }
