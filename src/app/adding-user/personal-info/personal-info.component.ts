@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../models/user';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class PersonalInfoComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+              private router: Router) {}
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -25,6 +27,7 @@ export class PersonalInfoComponent implements OnInit {
   onSubmit() {
     const { email, firstName, lastName } = this.form.value;
     const formData = { email, firstName, lastName };
+    this.router.navigate(['main', 'roles']);
   }
 
 }
