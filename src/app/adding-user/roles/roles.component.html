@@ -11,6 +11,7 @@
           [ngModel]
           #roles="ngModel"
           name="roles"
+          multiple
         >
           <option
             *ngFor="let r of rolesArr"
@@ -23,7 +24,7 @@
       <button
         type="submit"
         class="btn btn-primary"
-        [disabled]="f.invalid || !roles.length"
+        [disabled]="f.invalid"
       >Add</button>
     </form>
   </div>

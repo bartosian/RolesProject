@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Role} from '../../models/role';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-roles',
@@ -20,5 +21,9 @@ export class RolesComponent implements OnInit {
       {id: 3, name: "TeamLead"},
       {id: 4, name: "Manager"}
     ];
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form.value);
   }
 }
