@@ -24,6 +24,6 @@ export class RolesComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    const roles = form.value.roles;
   }
 }
