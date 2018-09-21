@@ -8,16 +8,17 @@ import {Role} from '../../models/role';
 })
 export class RolesComponent implements OnInit {
 
-  roles: Array<Role>;
+  rolesArr;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.roles = [
-      {id: 1, name: " "}
+    this.rolesArr = [
+      {id: 1, name: "Admin"},
+      {id: 2, name: "Developer"},
+      {id: 3, name: "TeamLead"},
+      {id: 4, name: "Manager"}
     ];
-
-
   }
 }
