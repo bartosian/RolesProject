@@ -1,0 +1,35 @@
+
+<h1 class="main-header">ChOOSE ROLES FOR PERSON</h1>
+<div class="card">
+  <div class="card-header bordered">
+    <div class="header-block">
+      <h3 class="title">Add roles for this user</h3>
+    </div>
+  </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <label class="control-label" for="roles">Choose roles</label>
+        <select
+          class="form-control"
+          id="roles"
+          required
+          [ngModel]
+          #roles="ngModel"
+          name="roles"
+        >
+          <option
+            *ngFor="let r of roles"
+            [value]="r._id"
+          >
+            {{r.name}}
+          </option>
+        </select>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="f.invalid || !roles.length"
+      >Add</button>
+    </form>
+  </div>
+

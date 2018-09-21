@@ -1,0 +1,21 @@
+.has-error {
+  outline: red;
+}
+
+#main-form {
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.main-header {
+  text-align: center;
+  font-weight: bold;
+  color: deepskyblue;
+  text-shadow: 0 0 1px black;
+  margin-top: 60px;
+}
+
+.next {
+  display: block;
+  margin: 0 auto;
+}
