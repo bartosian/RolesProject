@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {UsersService} from '../../services/users.service';
 import {User} from '../../models/user';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-summary',
@@ -15,7 +16,8 @@ export class SummaryComponent implements OnInit {
   basicRoles: any;
 
   constructor(private router: Router,
-              private usersService: UsersService) { }
+              private usersService: UsersService,
+              private apiService: ApiService) { }
 
   ngOnInit() {
     this.user = this.usersService.getUsersInfo().pop();
@@ -28,6 +30,12 @@ export class SummaryComponent implements OnInit {
 
   prevPage() {
     this.router.navigate(['main', 'roles']);
+  }
+
+  sendDataToSever() {
+    const data = { ...this.user, roles: this.roles };
+    this.apiService.sendData(data);
+    this.router.navigate(['/']);
   }
 
 }

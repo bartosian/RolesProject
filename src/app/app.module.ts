@@ -8,6 +8,7 @@ import { RolesComponent } from './adding-user/roles/roles.component';
 import { SummaryComponent } from './adding-user/summary/summary.component';
 import { AddingUserComponent } from './adding-user/adding-user.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
