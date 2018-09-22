@@ -13,13 +13,16 @@ export class UsersService {
   userData: Subject<User>;
   rolesData: Subject<Role>;
   rolesPrint = [
-    {id: 1, name: 'Admi'},
+    {id: 1, name: 'Admin'},
     {id: 2, name: 'Develope'},
     {id: 3, name: 'TeamLea'},
     {id: 4, name: 'Manage'}
   ];
 
-  constructor() { }
+  constructor() {
+    this.users = [];
+    this.roles = [];
+  }
 
   sendNewUser(user: User) {
     this.userData.next(user);
@@ -27,5 +30,16 @@ export class UsersService {
 
   sendRoles(roles: any) {
     this.rolesData.next(roles);
+  }
+
+  getUsersInfo() {
+    return this.users.slice();
+  }
+
+  getRolesInfo() {
+    return this.roles.slice();
+  }
+  getBasicRolesInfo() {
+    return this.rolesPrint.slice();
   }
 }

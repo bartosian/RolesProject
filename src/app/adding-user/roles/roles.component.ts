@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Role} from '../../models/role';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import {UsersService} from '../../services/users.service';
 
 @Component({
   selector: 'app-roles',
@@ -10,22 +11,20 @@ import {Router} from '@angular/router';
 })
 export class RolesComponent implements OnInit {
 
-  rolesArr;
+  rolesArr: Array<Role>;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private usersService: UsersService) {
   }
 
   ngOnInit() {
-    this.rolesArr = [
-      {id: 1, name: "Admin"},
-      {id: 2, name: "Developer"},
-      {id: 3, name: "TeamLead"},
-      {id: 4, name: "Manager"}
-    ];
+    this.rolesArr = this.usersService.getBasicRolesInfo();
   }
 
   onSubmit(form: NgForm) {
     const roles = form.value.roles;
+    this.usersService.roles.push(roles);
+    console.log(this.usersService.roles);
     this.router.navigate(['main', 'sum']);
   }
 

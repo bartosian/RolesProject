@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {UsersService} from '../../services/users.service';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-summary',
@@ -8,9 +10,17 @@ import {Router} from '@angular/router';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  user: User;
+  roles: any;
+  basicRoles: any;
+
+  constructor(private router: Router,
+              private usersService: UsersService) { }
 
   ngOnInit() {
+    this.user = this.usersService.getUsersInfo().pop();
+    this.basicRoles = this.usersService.getBasicRolesInfo();
+    this.roles = this.usersService.getRolesInfo().pop();
   }
 
   prevPage() {

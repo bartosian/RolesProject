@@ -23,6 +23,12 @@
   margin-bottom: 10px;
 }
 
+.second-block {
+  font-size: 1.2rem;
+  color: green;
+  font-weight: bold;
+}
+
 .btn-group {
   display: flex;
   justify-content: center;
