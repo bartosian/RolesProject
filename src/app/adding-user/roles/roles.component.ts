@@ -24,7 +24,6 @@ export class RolesComponent implements OnInit {
   onSubmit(form: NgForm) {
     const roles = form.value.roles;
     this.usersService.roles.push(roles);
-    console.log(this.usersService.roles);
     this.router.navigate(['main', 'sum']);
   }
 

@@ -13,10 +13,10 @@ export class UsersService {
   userData: Subject<User>;
   rolesData: Subject<Role>;
   rolesPrint = [
-    {id: 1, name: 'Admin'},
-    {id: 2, name: 'Develope'},
-    {id: 3, name: 'TeamLea'},
-    {id: 4, name: 'Manage'}
+    {roleId: 1, name: 'Admin'},
+    {roleId: 2, name: 'Developer'},
+    {roleId: 3, name: 'TeamLead'},
+    {roleId: 4, name: 'Manager'}
   ];
 
   constructor() {

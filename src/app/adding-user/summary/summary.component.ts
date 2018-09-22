@@ -21,6 +21,9 @@ export class SummaryComponent implements OnInit {
     this.user = this.usersService.getUsersInfo().pop();
     this.basicRoles = this.usersService.getBasicRolesInfo();
     this.roles = this.usersService.getRolesInfo().pop();
+    this.roles = this.roles.map(r => {
+      return this.basicRoles[r - 1].name;
+    });
   }
 
   prevPage() {
