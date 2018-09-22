@@ -9,6 +9,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   sendData(data: any) {
-    alert('Successfully sent user!');
+    alert(JSON.stringify(data));
   }
 }

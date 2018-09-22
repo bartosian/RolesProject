@@ -12,6 +12,7 @@ import {UsersService} from '../../services/users.service';
 export class RolesComponent implements OnInit {
 
   rolesArr: Array<Role>;
+  selectedRoles: any;
 
   constructor(private router: Router,
               private usersService: UsersService) {
@@ -19,6 +20,7 @@ export class RolesComponent implements OnInit {
 
   ngOnInit() {
     this.rolesArr = this.usersService.getBasicRolesInfo();
+    this.selectedRoles = this.usersService.getRolesInfo();
   }
 
   onSubmit(form: NgForm) {

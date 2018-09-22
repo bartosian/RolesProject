@@ -19,10 +19,11 @@ export class PersonalInfoComponent implements OnInit {
               private usersService: UsersService ) {}
 
   ngOnInit() {
+    const user = this.usersService.users ? this.usersService.getUsersInfo().pop() : '';
     this.form = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]]
+      firstName: [user ? user.firstName : '', [Validators.required]],
+      lastName: [user ? user.lastName : '', [Validators.required]],
+      email: [user ? user.email : '', [Validators.required, Validators.email]]
     });
   }
 
